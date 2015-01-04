@@ -1,0 +1,28 @@
+
+@import 'base';
+
+div.picker-div {
+	float: left;
+	width: 40%;
+	height: 125px;
+	border: 1px solid;
+	padding: 2px 2px 2px 2px;
+	margin-right: 5px;
+
+	select {
+		width: 250px;
+	}
+}
+
+div.options-div {
+	width: 40%;
+	height: 125px;
+	margin-left: 5px;
+	border: 1px solid;
+	float: left;
+
+	select {
+		width: 200px;
+		height: 100px;
+	}	
+}

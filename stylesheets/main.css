@@ -1,0 +1,39 @@
+/* line 3, ../sass/_base.scss */
+h2 {
+  text-align: center;
+  font-family: Helvetica, sans-serif;
+}
+
+/* line 8, ../sass/_base.scss */
+#mainDiv {
+  width: 75%;
+  margin: auto;
+}
+
+/* line 4, ../sass/main.scss */
+div.picker-div {
+  float: left;
+  width: 40%;
+  height: 125px;
+  border: 1px solid;
+  padding: 2px 2px 2px 2px;
+  margin-right: 5px;
+}
+/* line 12, ../sass/main.scss */
+div.picker-div select {
+  width: 250px;
+}
+
+/* line 17, ../sass/main.scss */
+div.options-div {
+  width: 40%;
+  height: 125px;
+  margin-left: 5px;
+  border: 1px solid;
+  float: left;
+}
+/* line 24, ../sass/main.scss */
+div.options-div select {
+  width: 200px;
+  height: 100px;
+}

@@ -1,6 +1,49 @@
 <html>
 	<head>
 		<title>Lookup Alteration Demo</title>
-		<script type="text/javascript" src="jqurey-1.11.min.js"></script>
+		<script type="text/javascript" src="jquery-1.11.1.min.js"></script>
+		<link rel="stylesheet" type="text/css" href="stylesheets/main.css" />
 	</head>
+	<body>
+		<h2>Lookup Editor Demonstration</h2>
+		<div id="mainDiv">
+		<div class="picker-div">
+			<select class="initPicker">
+				<option value="-1"> </option>
+				<option value="1">Yes/No</option>
+				<option value="2">Yes/No/No Respone</option>
+				<option value="3">First Second</option>
+			</select>
+		</div>
+		<div class="options-div">
+			<select multiple class="lookup-list">
+				<option>Placeholder</option>
+			</select>
+		</div>
+		</div>
+
+	<script type="text/javascript">
+		var pickerSelect = $(".initPicker");
+		var lookupList = $(".lookup-list");
+		var listOfLookups = [
+			[""],
+			["Yes", "No"],
+			["Yes", "No", "No Response"]
+		];
+
+		pickerSelect.change(function() {
+			
+			var currentSelect = pickerSelect.val();
+			var currentArray = listOfLookups[currentSelect];
+
+			lookupList.find('option').remove();
+
+			currentArray.forEach(function(element, index, array) {
+				lookupList.append("<option>" + element + "</option>");
+			});
+			 
+		});
+	</script>
+
+	</body>
 </html>
