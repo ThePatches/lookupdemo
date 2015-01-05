@@ -11,24 +11,29 @@
 			<select class="initPicker">
 				<option value="-1"> </option>
 				<option value="1">Yes/No</option>
-				<option value="2">Yes/No/No Respone</option>
+				<option value="2">Yes/No/No Response</option>
 				<option value="3">First Second</option>
 			</select>
 		</div>
 		<div class="options-div">
 			<select multiple class="lookup-list">
 				<option>Placeholder</option>
-			</select>
+			</select><br /><br />
+
+			<input type="text" id="newOption" />&nbsp;&nbsp;
+			<button id="btnAdd" value="Add" />
 		</div>
 		</div>
 
 	<script type="text/javascript">
 		var pickerSelect = $(".initPicker");
 		var lookupList = $(".lookup-list");
+		var addBtn = $("#btnAdd");
 		var listOfLookups = [
 			[""],
 			["Yes", "No"],
 			["Yes", "No", "No Response"]
+			["First", "Second", "Third"]
 		];
 
 		pickerSelect.change(function() {
