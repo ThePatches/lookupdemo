@@ -14,9 +14,9 @@ h2 {
 div.picker-div {
   float: left;
   width: 40%;
-  height: 125px;
+  height: 175px;
   border: 1px solid;
-  padding: 2px 2px 2px 2px;
+  padding: 10px 10px 10px 10px;
   margin-right: 5px;
 }
 /* line 12, ../sass/main.scss */
@@ -27,12 +27,13 @@ div.picker-div select {
 /* line 17, ../sass/main.scss */
 div.options-div {
   width: 40%;
-  height: 125px;
+  height: 175px;
   margin-left: 5px;
   border: 1px solid;
   float: left;
+  padding: 10px 10px 10px 10px;
 }
-/* line 24, ../sass/main.scss */
+/* line 25, ../sass/main.scss */
 div.options-div select {
   width: 200px;
   height: 100px;

@@ -4,9 +4,9 @@
 div.picker-div {
 	float: left;
 	width: 40%;
-	height: 125px;
+	height: 175px;
 	border: 1px solid;
-	padding: 2px 2px 2px 2px;
+	padding: 10px 10px 10px 10px;
 	margin-right: 5px;
 
 	select {
@@ -16,10 +16,11 @@ div.picker-div {
 
 div.options-div {
 	width: 40%;
-	height: 125px;
+	height: 175px;
 	margin-left: 5px;
 	border: 1px solid;
 	float: left;
+	padding: 10px 10px 10px 10px;
 
 	select {
 		width: 200px;

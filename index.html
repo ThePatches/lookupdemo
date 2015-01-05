@@ -9,7 +9,7 @@
 		<div id="mainDiv">
 		<div class="picker-div">
 			<select class="initPicker">
-				<option value="-1"> </option>
+				<option value="0"> </option>
 				<option value="1">Yes/No</option>
 				<option value="2">Yes/No/No Response</option>
 				<option value="3">First Second</option>
@@ -17,11 +17,11 @@
 		</div>
 		<div class="options-div">
 			<select multiple class="lookup-list">
-				<option>Placeholder</option>
+				<option>Place Holder</option>
 			</select><br /><br />
 
 			<input type="text" id="newOption" />&nbsp;&nbsp;
-			<button id="btnAdd" value="Add" />
+			<button id="btnAdd">Add</button>
 		</div>
 		</div>
 
@@ -29,25 +29,50 @@
 		var pickerSelect = $(".initPicker");
 		var lookupList = $(".lookup-list");
 		var addBtn = $("#btnAdd");
+		var newOption = $("#newOption");
+		
 		var listOfLookups = [
 			[""],
 			["Yes", "No"],
-			["Yes", "No", "No Response"]
+			["Yes", "No", "No Response"],
 			["First", "Second", "Third"]
 		];
 
 		pickerSelect.change(function() {
 			
 			var currentSelect = pickerSelect.val();
-			var currentArray = listOfLookups[currentSelect];
+			/*var currentArray = listOfLookups[currentSelect];
+
+			lookupList.find('option').remove();
+
+			currentArray.forEach(function(element, index, array) {
+				lookupList.append("<option>" + element + "</option>");
+			});*/
+			
+			updatePickerList(currentSelect);
+			 
+		});
+		
+		addBtn.click(function(e) {
+			var addedOption = newOption.val();
+			listOfLookups[pickerSelect.val()].push(addedOption);
+			
+			newOption.val("");
+			
+			updatePickerList(parseInt(pickerSelect.val()));
+		});
+		
+		function updatePickerList(inValue)
+		{
+			//var currentSelect = pickerSelect.val();
+			var currentArray = listOfLookups[inValue];
 
 			lookupList.find('option').remove();
 
 			currentArray.forEach(function(element, index, array) {
 				lookupList.append("<option>" + element + "</option>");
 			});
-			 
-		});
+		}
 	</script>
 
 	</body>
