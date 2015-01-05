@@ -18,7 +18,8 @@
 		<div class="options-div">
 			<select multiple class="lookup-list">
 				<option>Place Holder</option>
-			</select><br /><br />
+			</select> <button id="btnDelete">Delete</button>
+			<br /><br />
 
 			<input type="text" id="newOption" />&nbsp;&nbsp;
 			<button id="btnAdd">Add</button>
@@ -30,6 +31,7 @@
 		var lookupList = $(".lookup-list");
 		var addBtn = $("#btnAdd");
 		var newOption = $("#newOption");
+		var DeleteButton = $("#btnDelete");
 		
 		var listOfLookups = [
 			[""],
@@ -50,7 +52,7 @@
 			});*/
 			
 			updatePickerList(currentSelect);
-			 
+			
 		});
 		
 		addBtn.click(function(e) {
@@ -60,6 +62,15 @@
 			newOption.val("");
 			
 			updatePickerList(parseInt(pickerSelect.val()));
+		});
+		
+		DeleteButton.click(function(e)
+		{
+			var currentArray = pickerSelect.val();
+			var toDelete = lookupList.prop("selectedIndex");
+			
+			DeleteOne(currentArray, toDelete);
+			updatePickerList(currentArray);
 		});
 		
 		function updatePickerList(inValue)
@@ -73,6 +84,14 @@
 				lookupList.append("<option>" + element + "</option>");
 			});
 		}
+		
+		function DeleteOne(currentList, itemToRemove)
+		{
+			var currentArray = listOfLookups[currentList];
+			
+			currentArray.splice(itemToRemove, 1);
+		}
+		
 	</script>
 
 	</body>
